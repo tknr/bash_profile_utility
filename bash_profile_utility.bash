@@ -1,4 +1,4 @@
-ibitrate () {
+bitrate () {
         echo `basename "${1}"`: `ffmpeg -hide_banner -i "${1}" 2>&1 | grep Audio | cut -d "," -f 5 | tr -d " kb/s"`
 }
 
