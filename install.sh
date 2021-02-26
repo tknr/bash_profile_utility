@@ -8,6 +8,6 @@ if [ $(( ${installed_count} )) -ne 0 ] ;then
 fi
 echo "source ${script_file}" >> ~/.bash_profile
 echo 'installed.'
-echo 'for completing installation, you should execute'
+echo 'for completing installation, you should execute:'
 echo ' source ~/.bash_profile'
 exit 0
