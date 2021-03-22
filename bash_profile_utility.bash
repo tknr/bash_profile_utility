@@ -23,7 +23,7 @@ find_sort_more () {
 }
 
 f_s_m () {
-        find_sort_more ${1}
+        find_sort_more ${1} ${2}
 }
 
 rename_zen2han() {
