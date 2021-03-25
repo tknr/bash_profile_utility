@@ -29,4 +29,3 @@ f_s_m () {
 rename_zen2han() {
         mv -v "${1}" `echo "${1}"|nkf -m0Z1 -W -w`
 }
-
