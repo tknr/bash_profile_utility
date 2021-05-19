@@ -1,3 +1,21 @@
+## https://qiita.com/SUZUKI_Masaya/items/3148b5f1d9fa9fdb3b51
+if type trash-put &> /dev/null
+then
+    alias rm=trash-put
+fi
+
+if type progress &> /dev/null
+then
+    alias cv=progress
+fi
+
+## snap
+export PATH="$PATH:/var/lib/snapd/snap/bin"
+
+## linuxbrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+
 bitrate () {
         echo `basename "${1}"`: `ffmpeg -hide_banner -i "${1}" 2>&1 | grep Audio | cut -d "," -f 5 | tr -d " kb/s"`
 }
