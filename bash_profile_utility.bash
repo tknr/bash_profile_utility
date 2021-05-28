@@ -28,6 +28,10 @@ f_e_d () {
         find_empty_delete ${1}
 }
 
+f-e-d () {
+	find_empty_delete ${1}
+}
+
 du_sort_more () {
         du -h -d 1 ${1} | sort -h -r | more
 }
@@ -36,12 +40,20 @@ d_s_m () {
         du_sort_more ${1}
 }
 
+d-s-m () {
+	du_sort_more ${1}
+}
+
 find_sort_more () {
         find ${1} -name "*${2}*" | sort -h | more
 }
 
 f_s_m () {
         find_sort_more ${1} ${2}
+}
+
+f-s-m () {
+	find_sort_more ${1} ${2}
 }
 
 rename_zen2han() {
