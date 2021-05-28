@@ -1,3 +1,6 @@
+## https://qiita.com/neko_the_shadow/items/841bf59c4f80588baad7
+ulimit -n 65535
+
 ## https://qiita.com/SUZUKI_Masaya/items/3148b5f1d9fa9fdb3b51
 if type trash-put &> /dev/null
 then
