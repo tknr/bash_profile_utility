@@ -1,6 +1,12 @@
 ## https://qiita.com/neko_the_shadow/items/841bf59c4f80588baad7
 ulimit -n 65535
 
+## https://www.atmarkit.co.jp/flinux/rensai/linuxtips/357colorlsless.html
+alias ls='ls --color=always --time-style long-iso'
+alias ll='ls -l --color=always --time-style long-iso'
+alias llh='ls -lh --color=always --time-style long-iso'
+export LESS='-R'
+
 ## https://qiita.com/SUZUKI_Masaya/items/3148b5f1d9fa9fdb3b51
 if type trash-put &> /dev/null
 then
@@ -64,5 +70,5 @@ rename_zen2han() {
 }
 
 treeNhD () {
-	tree -NhD  --timefmt "%F %H:%M"
+	tree -NhD --timefmt "%F %H:%M"
 }
