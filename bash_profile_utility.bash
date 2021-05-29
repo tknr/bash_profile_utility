@@ -64,5 +64,5 @@ rename_zen2han() {
 }
 
 treeNhD () {
-	tree -NhD
+	tree -NhD  --timefmt "%F %H:%M"
 }
