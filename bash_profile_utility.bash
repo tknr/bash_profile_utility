@@ -7,7 +7,7 @@ alias ll='ls -l --color=always --time-style long-iso'
 alias llh='ls -lh --color=always --time-style long-iso'
 export LESS='-R'
 
-alias treeNhD='tree -NhD --timefmt "%F %H:%M"'
+alias treeCNhD='tree -CNhD --timefmt "%F %H:%M"'
 
 ## https://qiita.com/SUZUKI_Masaya/items/3148b5f1d9fa9fdb3b51
 if type trash-put &> /dev/null
