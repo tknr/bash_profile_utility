@@ -30,7 +30,12 @@ fi
 export PATH="$PATH:/var/lib/snapd/snap/bin"
 
 bitrate () {
-        echo `basename "${1}"`: `ffmpeg -hide_banner -i "${1}" 2>&1 | grep Audio | cut -d "," -f 5 | tr -d " kb/s"`
+	if type ffmpeg &> /dev/null
+	then
+        	echo `basename "${1}"`: `ffmpeg -hide_banner -i "${1}" 2>&1 | grep Audio | cut -d "," -f 5 | tr -d " kb/s"`
+	else
+		echo 'ffmpeg not found.'
+	fi
 }
 
 find_empty_delete () {
