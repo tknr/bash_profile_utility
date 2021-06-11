@@ -20,12 +20,14 @@ then
     alias cv=progress
 fi
 
+## linuxbrew
+if type /home/linuxbrew/.linuxbrew/bin/brew &> /dev/null
+then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 ## snap
 export PATH="$PATH:/var/lib/snapd/snap/bin"
-
-## linuxbrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 
 bitrate () {
         echo `basename "${1}"`: `ffmpeg -hide_banner -i "${1}" 2>&1 | grep Audio | cut -d "," -f 5 | tr -d " kb/s"`
