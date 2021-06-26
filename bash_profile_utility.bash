@@ -78,5 +78,5 @@ rename_zen2han() {
 	src=${1}
 	dst=`echo "${1}"|nkf -e |  nkf -m0Z1 -w`
 	echo $src" -> "$dst
-        mv -v "${src}" ${dst}
+        mv -v "${src}" "${dst}"
 }
