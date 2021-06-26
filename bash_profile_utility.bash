@@ -75,5 +75,7 @@ f-s-m () {
 }
 
 rename_zen2han() {
-        mv -v "${1}" `echo "${1}"|nkf -e |  nkf -m0Z1 -w`
+	src=${1}
+	dst=`echo "${1}"|nkf -e |  nkf -m0Z1 -w`
+        mv -v "${src}" ${dst}
 }
