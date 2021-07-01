@@ -81,3 +81,7 @@ rename_zen2han() {
 	echo $src" -> "$dst
         mv -v "${src}" "${dst}"
 }
+
+remove_ansi_escape_code(){
+	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g"
+}
