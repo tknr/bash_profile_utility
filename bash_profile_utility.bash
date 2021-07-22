@@ -41,38 +41,12 @@ bitrate () {
 find_empty_delete () {
         find ${1} -empty -delete
 }
-
-f_e_d () {
-        find_empty_delete ${1}
-}
-
-f-e-d () {
-	find_empty_delete ${1}
-}
+alias fed='find_empty_delete'
 
 du_sort_more () {
         du -h -d 1 ${1} | sort -h -r | more
 }
-
-d_s_m () {
-        du_sort_more ${1}
-}
-
-d-s-m () {
-	du_sort_more ${1}
-}
-
-find_sort_more () {
-        find ${1} -name "*${2}*" | sort -h | more
-}
-
-f_s_m () {
-        find_sort_more ${1} ${2}
-}
-
-f-s-m () {
-	find_sort_more ${1} ${2}
-}
+alias dsm='du_sort_more'
 
 rename_zen2han() {
 	src=${1}
@@ -81,7 +55,7 @@ rename_zen2han() {
 	echo $src" -> "$dst
         mv -v "${src}" "${dst}"
 }
-rename_zen2ha_all() {
+rename_zen2han_all() {
 	IFS=$'\n'
 	for file in `ls -1 --color=none | sort -h`
 	do
@@ -89,6 +63,6 @@ rename_zen2ha_all() {
 	done
 }
 
-remove_ansi_escape_code(){
+remove_ansi_escape_code() {
 	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g"
 }
