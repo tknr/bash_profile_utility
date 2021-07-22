@@ -81,6 +81,13 @@ rename_zen2han() {
 	echo $src" -> "$dst
         mv -v "${src}" "${dst}"
 }
+rename_zen2ha_all() {
+	IFS=$'\n'
+	for file in `ls -1 --color=none | sort -h`
+	do
+		rename_zen2han ${file}
+	done
+}
 
 remove_ansi_escape_code(){
 	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g"
