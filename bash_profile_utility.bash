@@ -48,21 +48,6 @@ du_sort_more () {
 }
 alias dsm='du_sort_more'
 
-rename_zen2han() {
-	src=${1}
-	dst=`echo "${1}"|nkf -Zw`
-        mv -v "${src}" "${dst}"
-}
-rename_zen2han_all() {
-	IFS=$'\n'
-	src=${1}
-	for file in `ls -1 --color=none`
-	do
-		rename_zen2han ${file}
-	done
-}
-
-
 remove_ansi_escape_code() {
 	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g"
 }
