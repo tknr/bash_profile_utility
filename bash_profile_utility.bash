@@ -50,21 +50,18 @@ alias dsm='du_sort_more'
 
 rename_zen2han() {
 	src=${1}
-	dst=`echo "${1}"|nkf -e |  nkf -m0Z1 -w`
-	dst=`echo "${dst}" | sed -e "s/\//／/g"`
-#	dst=`echo "${dst}" | sed -e "s/\!/！/g"`
-	dst=`echo "${dst}" | sed -e "s/</＜/g"`
-	dst=`echo "${dst}" | sed -e "s/>/＞/g"`
-	echo $src" -> "$dst
+	dst=`echo "${1}"|nkf -Zw`
         mv -v "${src}" "${dst}"
 }
 rename_zen2han_all() {
 	IFS=$'\n'
-	for file in `ls -1 --color=none | sort -h`
+	src=${1}
+	for file in `ls -1 --color=none`
 	do
 		rename_zen2han ${file}
 	done
 }
+
 
 remove_ansi_escape_code() {
 	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g"
