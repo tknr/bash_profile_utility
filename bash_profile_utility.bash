@@ -48,6 +48,11 @@ du_sort_more () {
 }
 alias dsm='du_sort_more'
 
+find_sort_more () {
+        find ${1} -name "*${2}*" | sort -h | more
+}
+alias fsm='find_sort_more'
+
 remove_ansi_escape_code() {
 	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g"
 }
