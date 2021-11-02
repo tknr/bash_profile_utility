@@ -27,9 +27,6 @@ then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-## snap
-export PATH="$PATH:/var/lib/snapd/snap/bin"
-
 bitrate () {
 	if type ffmpeg &> /dev/null
 	then
