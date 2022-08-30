@@ -4,7 +4,8 @@ ulimit -n 65535
 ## https://www.atmarkit.co.jp/flinux/rensai/linuxtips/357colorlsless.html
 alias ls='ls --color=always --time-style long-iso'
 alias ll='ls -l --color=always --time-style long-iso'
-alias llh='ls -lh --color=always --time-style long-iso'
+alias lh='ls -lh --color=always --time-style long-iso'
+alias llh='lh'
 export LESS='-R'
 
 alias treeCNhD='tree -CNhD --timefmt "%F %H:%M"'
