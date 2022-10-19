@@ -28,6 +28,13 @@ then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+## opam configuration
+test -r $HOME/.opam/opam-init/init.sh && . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+## brew install bash-completion@2
+[[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
+
+
 bitrate () {
 	if type ffmpeg &> /dev/null
 	then
@@ -42,15 +49,13 @@ find_empty_delete () {
 }
 alias fed='find_empty_delete'
 
-du_sort_more () {
-        du -h -d 1 ${1} | sort -h -r | more
+du_sort () {
+	du -h -d 1 ${1} | sort -h -r
 }
-alias dsm='du_sort_more'
 
-find_sort_more () {
-        find ${1} -name "*${2}*" | sort -h | more
+find_sort () {
+	find ${1} -name "*${2}*" | sort -h
 }
-alias fsm='find_sort_more'
 
 remove_ansi_escape_code() {
 	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g"
