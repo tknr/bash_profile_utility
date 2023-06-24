@@ -12,10 +12,10 @@ alias treeCNhD='tree -CNhD --timefmt "%F %H:%M"'
 alias treecnhd='treeCNhD'
 
 ## https://qiita.com/SUZUKI_Masaya/items/3148b5f1d9fa9fdb3b51
-if type trash-put &> /dev/null
-then
-    alias rm=trash-put
-fi
+#if type trash-put &> /dev/null
+#then
+#    alias rm=trash-put
+#fi
 
 if type progress &> /dev/null
 then
